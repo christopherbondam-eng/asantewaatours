@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asantewaa's Tour | Experience Ghana's Golden Legacy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --deep-earth: #1A1A1A;
+            --ghana-red: #CE1126;
+            --ghana-gold: #FCD116;
+            --ghana-green: #006B3F;
+            --warm-sand: #F5F1E8;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--warm-sand);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(26,26,26,0.7) 0%, rgba(0,107,63,0.4) 100%),
+                        url('WhatsApp Image 2026-03-10 at 10.28.25.jpeg') center/cover;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .gold-gradient {
+            background: linear-gradient(135deg, #D4AF37 0%, #F4E5C2 50%, #D4AF37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .ghana-gradient {
+            background: linear-gradient(135deg, #CE1126 0%, #FCD116 50%, #006B3F 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--warm-sand);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-gold);
+            border-radius: 5px;
+        }
+
+        .gallery-img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.1);
+        }
+
+        .tour-card-img {
+            height: 280px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 1rem;
+        }
+
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
+        <div class="glass-card px-6 py-4">
+            <div class="max-w-7xl mx-auto flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <img src="WhatsApp Image 2026-03-10 at 09.58.48.jpeg" alt="Logo" class="w-12 h-12 rounded-full object-cover border-2 border-yellow-400">
+                    <div>
+                        <h1 class="text-2xl font-bold text-white serif tracking-wide">Asantewaa's Tour</h1>
+                        <p class="text-xs text-yellow-400 uppercase tracking-widest">Explore Ghana's Golden Legacy</p>
+                    </div>
+                </div>
+
+                <div class="hidden md:flex space-x-8 text-white font-medium">
+                    <a href="#home" class="hover:text-yellow-400 transition">Home</a>
+                    <a href="#tours" class="hover:text-yellow-400 transition">Tours</a>
+                    <a href="#experiences" class="hover:text-yellow-400 transition">Experiences</a>
+                    <a href="#gallery" class="hover:text-yellow-400 transition">Gallery</a>
+                    <a href="#book" class="bg-yellow-600 px-6 py-2 rounded-full hover:bg-yellow-700 transition">Book Now</a>
+                </div>
+
+                <button class="md:hidden text-white text-2xl" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobileMenu" class="hidden md:hidden glass-card absolute w-full">
+            <div class="flex flex-col p-6 space-y-4 text-white">
+                <a href="#home" class="hover:text-yellow-400">Home</a>
+                <a href="#tours" class="hover:text-yellow-400">Tours</a>
+                <a href="#experiences" class="hover:text-yellow-400">Experiences</a>
+                <a href="#gallery" class="hover:text-yellow-400">Gallery</a>
+                <a href="#book" class="text-yellow-400 font-bold">Book Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+
+        <div class="relative z-10 text-center px-6 max-w-5xl mx-auto">
+            <div class="mb-6 inline-block">
+                <span class="text-yellow-400 text-sm uppercase tracking-[0.3em] font-semibold border-b-2 border-yellow-400 pb-2">
+                    Welcome to Ghana
+                </span>
+            </div>
+
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight serif">
+                Experience Ghana<br>
+                <span class="gold-gradient italic">With Asantewaa</span>
+            </h1>
+
+            <p class="text-xl md:text-2xl text-gray-200 mb-12 max-w-2xl mx-auto font-light">
+                Discover the rich culture, history, and warmth of Ghana. From Cape Coast castles to vibrant markets, 
+                your authentic Ghanaian adventure awaits.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button onclick="scrollToBook()" class="bg-gradient-to-r from-yellow-600 to-yellow-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:scale-105 transition transform shadow-2xl flex items-center gap-2">
+                    <i class="fas fa-calendar-check"></i>
+                    Start Your Journey
+                </button>
+                <button onclick="document.getElementById('videoModal').classList.remove('hidden')" class="glass-card text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-gray-900 transition flex items-center gap-2">
+                    <i class="fas fa-play-circle"></i>
+                    Watch Our Story
+                </button>
+            </div>
+
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 text-white">
+                <div class="glass-card p-4 rounded-2xl floating" style="animation-delay: 0s;">
+                    <div class="text-3xl font-bold text-yellow-400">10+</div>
+                    <div class="text-sm opacity-80">Years Experience</div>
+                </div>
+                <div class="glass-card p-4 rounded-2xl floating" style="animation-delay: 0.5s;">
+                    <div class="text-3xl font-bold text-yellow-400">5k+</div>
+                    <div class="text-sm opacity-80">Happy Travelers</div>
+                </div>
+                <div class="glass-card p-4 rounded-2xl floating" style="animation-delay: 1s;">
+                    <div class="text-3xl font-bold text-yellow-400">100%</div>
+                    <div class="text-sm opacity-80">Ghanaian Owned</div>
+                </div>
+                <div class="glass-card p-4 rounded-2xl floating" style="animation-delay: 1.5s;">
+                    <div class="text-3xl font-bold text-yellow-400">24/7</div>
+                    <div class="text-sm opacity-80">Local Support</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Owner Introduction -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-full h-full bg-gradient-to-br from-red-600 via-yellow-400 to-green-600 rounded-3xl opacity-80"></div>
+                    <img src="WhatsApp Image 2026-03-10 at 10.27.07.jpeg" 
+                         alt="Yaa Asantewaa Nsiah" 
+                         class="relative rounded-3xl shadow-2xl w-full object-cover h-[500px]">
+                </div>
+
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900 serif">
+                        Meet Your Guide<br>
+                        <span class="ghana-gradient">Yaa Asantewaa Nsiah</span>
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                        "Come See Ghana With Me Asantewaa" - I am passionate about showcasing the beauty, culture, and history of our beloved Ghana. 
+                        From the Eastern Region's Safari Valley to the historic Cape Coast Castle, every tour is designed to give you 
+                        an authentic Ghanaian experience.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-green-600"></i>
+                            <span class="text-gray-700">Cultural Immersion</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-green-600"></i>
+                            <span class="text-gray-700">Heritage Tours</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-green-600"></i>
+                            <span class="text-gray-700">Local Experiences</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-check-circle text-green-600"></i>
+                            <span class="text-gray-700">Personalized Service</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-yellow-50 p-6 rounded-2xl border-l-4 border-yellow-600 mb-6">
+                        <p class="italic text-gray-700">"I don't just show you Ghana - I help you feel Ghana's heartbeat."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Tours -->
+    <section id="tours" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 serif">Our Ghana Experiences</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Handcrafted tours showcasing the best of Ghana's heritage, nature, and culture</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Eastern Experience -->
+                <div class="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="relative overflow-hidden">
+                        <img src="WhatsApp Image 2026-03-10 at 10.29.15.jpeg" 
+                             alt="Waterfall Experience" 
+                             class="tour-card-img group-hover:scale-110 transition duration-500">
+                        <div class="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-sm font-bold text-gray-900">From $150</div>
+                        <div class="absolute top-4 left-4 bg-green-600 text-white px-3 py-1 rounded-full text-xs font-bold">POPULAR</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 serif">Eastern Experience</h3>
+                        <p class="text-gray-600 mb-4">Safari Valley, Botanical Garden, palm wine tasting, waterfall massage, and Aburi View.</p>
+                        <button onclick="selectTour('Eastern Experience', 150)" class="text-yellow-600 font-semibold hover:text-yellow-700">Book Now <i class="fas fa-arrow-right ml-1"></i></button>
+                    </div>
+                </div>
+
+                <!-- Heritage & Canopy -->
+                <div class="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="relative overflow-hidden">
+                        <img src="WhatsApp Image 2026-03-10 at 09.34.10.jpeg" 
+                             alt="Cape Coast Castle" 
+                             class="tour-card-img group-hover:scale-110 transition duration-500">
+                        <div class="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-sm font-bold text-gray-900">From $200</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 serif">Heritage & Canopy</h3>
+                        <p class="text-gray-600 mb-4">Cape Coast Castle, Elmina Dungeon, Assin Manso Ancestral River, and Kakum National Park.</p>
+                        <button onclick="selectTour('Heritage and Canopy', 200)" class="text-yellow-600 font-semibold hover:text-yellow-700">Book Now <i class="fas fa-arrow-right ml-1"></i></button>
+                    </div>
+                </div>
+
+                <!-- Accra City Tour -->
+                <div class="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="relative overflow-hidden">
+                        <img src="WhatsApp Image 2026-03-10 at 09.34.17.jpeg" 
+                             alt="Accra City Tour" 
+                             class="tour-card-img group-hover:scale-110 transition duration-500">
+                        <div class="absolute top-4 right-4 bg-white px-3 py-1 rounded-full text-sm font-bold text-gray-900">From $120</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 serif">Accra City Tour</h3>
+                        <p class="text-gray-600 mb-4">National Museum, Nkrumah Memorial, Jamestown, drumming & dancing, Makola market.</p>
+                        <button onclick="selectTour('Accra City Tour', 120)" class="text-yellow-600 font-semibold hover:text-yellow-700">Book Now <i class="fas fa-arrow-right ml-1"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Experiences -->
+    <section id="experiences" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 serif">Special Experiences</h2>
+                <p class="text-gray-600">Authentic activities that connect you with Ghanaian culture</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Drumming -->
+                <div class="relative group overflow-hidden rounded-2xl aspect-[4/5] cursor-pointer">
+                    <img src="WhatsApp Image 2026-03-10 at 09.34.13.jpeg" class="gallery-img">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h3 class="font-bold text-lg">Drumming & Dance</h3>
+                        <p class="text-sm opacity-80">Learn traditional rhythms</p>
+                    </div>
+                </div>
+
+                <!-- Market Experience -->
+                <div class="relative group overflow-hidden rounded-2xl aspect-[4/5] cursor-pointer">
+                    <img src="WhatsApp Image 2026-03-10 at 09.34.29.jpeg" class="gallery-img">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h3 class="font-bold text-lg">Market Tours</h3>
+                        <p class="text-sm opacity-80">Local shopping experience</p>
+                    </div>
+                </div>
+
+                <!-- Cultural Ceremony -->
+                <div class="relative group overflow-hidden rounded-2xl aspect-[4/5] cursor-pointer">
+                    <img src="WhatsApp Image 2026-03-10 at 09.34.14.jpeg" class="gallery-img">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h3 class="font-bold text-lg">Cultural Ceremonies</h3>
+                        <p class="text-sm opacity-80">Traditional dress & customs</p>
+                    </div>
+                </div>
+
+                <!-- Nature Hikes -->
+                <div class="relative group overflow-hidden rounded-2xl aspect-[4/5] cursor-pointer">
+                    <img src="WhatsApp Image 2026-03-10 at 10.29.16.jpeg" class="gallery-img">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <h3 class="font-bold text-lg">Nature Adventures</h3>
+                        <p class="text-sm opacity-80">Hiking & exploration</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="py-20 bg-gray-900">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-white serif">Experience the Journey</h2>
+                <p class="text-gray-400">A glimpse into authentic Ghanaian village life</p>
+            </div>
+
+            <div class="video-container shadow-2xl">
+                <video controls poster="WhatsApp Image 2026-03-10 at 09.34.15.jpeg">
+                    <source src="WhatsApp Video 2026-03-10 at 09.39.12.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <div class="mt-8 grid grid-cols-3 gap-4">
+                <div class="text-center text-white">
+                    <i class="fas fa-water text-3xl text-yellow-400 mb-2"></i>
+                    <p class="text-sm">Village Life</p>
+                </div>
+                <div class="text-center text-white">
+                    <i class="fas fa-hands-helping text-3xl text-yellow-400 mb-2"></i>
+                    <p class="text-sm">Cultural Exchange</p>
+                </div>
+                <div class="text-center text-white">
+                    <i class="fas fa-heart text-3xl text-yellow-400 mb-2"></i>
+                    <p class="text-sm">Authentic Moments</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Full Gallery -->
+    <section id="gallery" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 serif">Ghana Through Our Lens</h2>
+                <p class="text-gray-600">Real moments from our unforgettable adventures</p>
+            </div>
+
+            <!-- Gallery Grid - All Images -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <!-- Row 1 -->
+                <div class="gallery-item relative overflow-hidden rounded-2xl aspect-square cursor-pointer" onclick="openLightbox('WhatsApp Image 2026-03-10 at 09.34.08 (1).jpeg')">
+                    <img src="WhatsApp Image 2026-03-10 at 09.34.08 (1).jpeg" class="gallery-img">
+                    <div class="absolute inset-0 bg-black opacity-0 hover:opacity-40 transition flex items-center justify-center">
+                        <i class="fas fa-expand text-white text-2xl"></i>
+                    </div>
+                </div>
+
+                <div class="gallery-item relative overflow-hidden rounded-2xl aspect-square cursor-pointer" onclick="openLightbox('WhatsApp Image 2026-03-10 at 09.34.11.jpeg')">
+                    <img src="WhatsApp Image 2026-03-10 at 09.34.11.jpeg" class="gallery-img">
+                    <div class="absolute inset-0 bg-black opacity-0 hover:opacity-40 transition flex items-center justify-center">
+                        <i class="fas fa-expand text-white text-2xl"></i>
+                    </div>
+                </div>
+
+                <div class="gallery-item relative overflow-hidden rounded-2xl aspect-square cursor-pointer" onclick="openLightbox('WhatsApp Image 2026-03-10 at 09.34.13.jpeg')">
+                    <img src="WhatsApp Image 2026-03-10 at 09.34.13.jpeg" class="gallery-img">
+                    <div class="absolute inset-0 bg-black opacity-0 hover:opacity-40 transition flex items-center justify-center">
+                        <i class="fas fa-expand text-white text-2xl"></i>
+                    </div>
+                </div>
+
+                <div class="gallery-item relative overflow-hidden rounded-2xl aspect-square cursor-pointer" onclick="openLightbox('WhatsApp Image 2026-03-10 at 09.34.14.jpeg')">
+                    <img src="WhatsApp Image 2026-03-10 at 09.34.14.jpeg" class="gallery-img">
+                    <div class="absolute inset-0 bg-black opacity-0 hover:opacity-40 transition flex items-center justify-center">
+                        <i class="fas fa-expand text-white text-2xl"></i>
+                    </div>
+                </div>
+
+                <!-- Row 2 -->
+                <div class="gallery-item relative overflow-hidden rounded-2xl aspect-square cursor-pointer" onclick="openLightbox('WhatsApp Image 2026-03-10 at 09.34.15.jpeg')">
+                    <img src="WhatsApp Image 2026-03-10 at 09.34.15.jpeg" class="gallery-img">
+                    <div class="absolute inset-0 bg-black opacity-0 hover:opacity-40 transition flex items-center justify-center">
+                        <i class="fas fa-expand text-white text-2xl"></i>
+                    </div>
+                </div>
+
+                <div class="gallery-item relative overflow-hidden rounded-2xl aspect-square cursor-pointer" onclick="openLightbox('WhatsApp Image 2026-03-10 at 09.34.17.jpeg')">
+                    <img src="WhatsApp Image 2026-03-10 at 09.34.17.jpeg" class="gallery-img">
+                    <div class="absolute inset-0 bg-black opacity-0 hover:opacity-40 transition flex items-center justify-center">
+                        <i class="fas fa-expand text-white text-2xl"></i>
+                    </div>
+                </div>
+
+                <div class="gallery-item relative overflow-hidden rounded-2xl aspect-square cursor-pointer" onclick="openLightbox('WhatsApp Image 2026-03-10 at 09.34.29.jpeg')">
+                    <img src="WhatsApp Image 2026-03-10 at 09.34.29.jpeg" class="gallery-img">
+                    <div class="absolute inset-0 bg-black opacity-0 hover:opacity-40 transition flex items-center justify-center">
+                        <i class="fas fa-expand text-white text-2xl"></i>
+                    </div>
+                </div>
+
+                <div class="gallery-item relative overflow-hidden rounded-2xl aspect-square cursor-pointer" onclick="openLightbox('WhatsApp Image 2026-03-10 at 09.34.33.jpeg')">
+                    <img src="WhatsApp Image 2026-03-10 at 09.34.33.jpeg" class="gallery-img">
+                    <div class="absolute inset-0 bg-black opacity-0 hover:opacity-40 transition flex items-center justify-center">
+                        <i class="fas fa-expand text-white text-2xl"></i>
+                    </div>
+                </div>
+
+                <!-- Row 3 - Large Items -->
+                <div class="gallery-item relative overflow-hidden rounded-2xl aspect-square md:col-span-2 cursor-pointer" onclick="openLightbox('WhatsApp Image 2026-03-10 at 10.28.25.jpeg')">
+                    <img src="WhatsApp Image 2026-03-10 at 10.28.25.jpeg" class="gallery-img">
+                    <div class="absolute inset-0 bg-black opacity-0 hover:opacity-40 transition flex items-center justify-center">
+                        <i class="fas fa-expand text-white text-3xl"></i>
+                    </div>
+                </div>
+
+                <div class="gallery-item relative overflow-hidden rounded-2xl aspect-square cursor-pointer" onclick="openLightbox('WhatsApp Image 2026-03-10 at 09.34.36.jpeg')">
+                    <img src="WhatsApp Image 2026-03-10 at 09.34.36.jpeg" class="gallery-img">
+                    <div class="absolute inset-0 bg-black opacity-0 hover:opacity-40 transition flex items-center justify-center">
+                        <i class="fas fa-expand text-white text-2xl"></i>
+                    </div>
+                </div>
+
+                <div class="gallery-item relative overflow-hidden rounded-2xl aspect-square cursor-pointer" onclick="openLightbox('WhatsApp Image 2026-03-10 at 09.43.33.jpeg')">
+                    <img src="WhatsApp Image 2026-03-10 at 09.43.33.jpeg" class="gallery-img">
+                    <div class="absolute inset-0 bg-black opacity-0 hover:opacity-40 transition flex items-center justify-center">
+                        <i class="fas fa-expand text-white text-2xl"></i>
+                    </div>
+                </div>
+
+                <!-- Row 4 -->
+                <div class="gallery-item relative overflow-hidden rounded-2xl aspect-square cursor-pointer" onclick="openLightbox('WhatsApp Image 2026-03-10 at 09.58.48.jpeg')">
+                    <img src="WhatsApp Image 2026-03-10 at 09.58.48.jpeg" class="gallery-img">
+                    <div class="absolute inset-0 bg-black opacity-0 hover:opacity-40 transition flex items-center justify-center">
+                        <i class="fas fa-expand text-white text-2xl"></i>
+                    </div>
+                </div>
+
+                <div class="gallery-item relative overflow-hidden rounded-2xl aspect-square cursor-pointer" onclick="openLightbox('WhatsApp Image 2026-03-10 at 10.27.07.jpeg')">
+                    <img src="WhatsApp Image 2026-03-10 at 10.27.07.jpeg" class="gallery-img">
+                    <div class="absolute inset-0 bg-black opacity-0 hover:opacity-40 transition flex items-center justify-center">
+                        <i class="fas fa-expand text-white text-2xl"></i>
+                    </div>
+                </div>
+
+                <div class="gallery-item relative overflow-hidden rounded-2xl aspect-square cursor-pointer" onclick="openLightbox('WhatsApp Image 2026-03-10 at 10.29.15.jpeg')">
+                    <img src="WhatsApp Image 2026-03-10 at 10.29.15.jpeg" class="gallery-img">
+                    <div class="absolute inset-0 bg-black opacity-0 hover:opacity-40 transition flex items-center justify-center">
+                        <i class="fas fa-expand text-white text-2xl"></i>
+                    </div>
+                </div>
+
+                <div class="gallery-item relative overflow-hidden rounded-2xl aspect-square cursor-pointer" onclick="openLightbox('WhatsApp Image 2026-03-10 at 10.29.16.jpeg')">
+                    <img src="WhatsApp Image 2026-03-10 at 10.29.16.jpeg" class="gallery-img">
+                    <div class="absolute inset-0 bg-black opacity-0 hover:opacity-40 transition flex items-center justify-center">
+                        <i class="fas fa-expand text-white text-2xl"></i>
+                    </div>
+                </div>
+
+                <!-- Row 5 - Cape Coast Castle (New Addition) -->
+                <div class="gallery-item relative overflow-hidden rounded-2xl aspect-square md:col-span-2 cursor-pointer" onclick="openLightbox('WhatsApp Image 2026-03-10 at 09.34.10.jpeg')">
+                    <img src="WhatsApp Image 2026-03-10 at 09.34.10.jpeg" class="gallery-img">
+                    <div class="absolute inset-0 bg-black opacity-0 hover:opacity-40 transition flex items-center justify-center">
+                        <i class="fas fa-expand text-white text-3xl"></i>
+                    </div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <p class="font-bold text-lg">Cape Coast Castle</p>
+                        <p class="text-sm opacity-80">UNESCO World Heritage Site</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item relative overflow-hidden rounded-2xl aspect-square md:col-span-2 cursor-pointer" onclick="openLightbox('WhatsApp Image 2026-03-10 at 09.34.08 (1).jpeg')">
+                    <img src="WhatsApp Image 2026-03-10 at 09.34.08 (1).jpeg" class="gallery-img">
+                    <div class="absolute inset-0 bg-black opacity-0 hover:opacity-40 transition flex items-center justify-center">
+                        <i class="fas fa-expand text-white text-3xl"></i>
+                    </div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <p class="font-bold text-lg">Group Adventures</p>
+                        <p class="text-sm opacity-80">Creating lasting memories</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="book" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 serif">Let's Plan Your Trip</h2>
+                    <p class="text-gray-600 mb-8">Ready to explore Ghana? Get in touch and let's create your perfect itinerary.</p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                                <i class="fab fa-whatsapp text-green-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-900">WhatsApp</p>
+                                <p class="text-gray-600">+233 243 954716</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-envelope text-yellow-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-900">Email</p>
+                                <p class="text-gray-600">nsiahclara7@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-red-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-900">Location</p>
+                                <p class="text-gray-600">Accra, Ghana</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-3xl shadow-xl p-8">
+                    <h3 class="text-2xl font-bold mb-6 serif">Book Your Experience</h3>
+
+                    <form id="bookingForm" onsubmit="processBooking(event)">
+                        <div class="space-y-4">
+                            <input type="text" name="name" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-yellow-600 focus:outline-none" placeholder="Full Name">
+                            <input type="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-yellow-600 focus:outline-none" placeholder="Email">
+                            <input type="tel" name="phone" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-yellow-600 focus:outline-none" placeholder="Phone / WhatsApp">
+
+                            <select id="tourSelect" name="tourSelect" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-yellow-600 focus:outline-none" onchange="updatePrice()">
+                                <option value="">Select Tour...</option>
+                                <option value="Eastern Experience" data-price="150">Eastern Experience - $150</option>
+                                <option value="Heritage and Canopy" data-price="200">Heritage & Canopy - $200</option>
+                                <option value="Accra City Tour" data-price="120">Accra City Tour - $120</option>
+                                <option value="Custom" data-price="0">Custom Tour - Quote</option>
+                            </select>
+
+                            <div class="grid grid-cols-2 gap-4">
+                                <input type="date" name="date" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-yellow-600 focus:outline-none">
+                                <input type="number" min="1" value="1" id="travelerCount" name="travelerCount" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-yellow-600 focus:outline-none" onchange="updatePrice()">
+                            </div>
+
+                            <textarea name="message" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-yellow-600 focus:outline-none" rows="3" placeholder="Special requests..."></textarea>
+                        </div>
+
+                        <div class="bg-yellow-50 rounded-xl p-4 mt-6 mb-6 border border-yellow-200">
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-700 font-semibold">Estimated Total</span>
+                                <span class="text-2xl font-bold text-yellow-600" id="totalPrice">$0</span>
+                            </div>
+                        </div>
+
+                        <button type="submit" id="submitBtn" class="w-full bg-gradient-to-r from-green-600 to-green-700 text-white py-4 rounded-xl font-bold text-lg hover:from-green-700 hover:to-green-800 transition flex items-center justify-center gap-2">
+                            <span>Request Booking</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="WhatsApp Image 2026-03-10 at 09.58.48.jpeg" class="w-10 h-10 rounded-full object-cover">
+                        <div>
+                            <h3 class="font-bold serif">Asantewaa's Tour</h3>
+                            <p class="text-xs text-yellow-400">Ghana's Golden Legacy</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm">Your trusted guide to authentic Ghanaian experiences.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#home" class="hover:text-yellow-400">Home</a></li>
+                        <li><a href="#tours" class="hover:text-yellow-400">Tours</a></li>
+                        <li><a href="#gallery" class="hover:text-yellow-400">Gallery</a></li>
+                        <li><a href="#book" class="hover:text-yellow-400">Book Now</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4">Tours</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="#" class="hover:text-yellow-400">Eastern Experience</a></li>
+                        <li><a href="#" class="hover:text-yellow-400">Heritage & Canopy</a></li>
+                        <li><a href="#" class="hover:text-yellow-400">Accra City Tour</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><i class="fab fa-whatsapp mr-2"></i> +233 243 954716</li>
+                        <li><i class="fas fa-envelope mr-2"></i> nsiahclara7@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-500 text-sm">&copy; 2024 Asantewaa's Tour. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Video Modal -->
+    <div id="videoModal" class="hidden fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4">
+        <div class="relative w-full max-w-4xl">
+            <button onclick="document.getElementById('videoModal').classList.add('hidden')" class="absolute -top-12 right-0 text-white hover:text-yellow-400">
+                <i class="fas fa-times text-3xl"></i>
+            </button>
+            <div class="video-container">
+                <video controls autoplay>
+                    <source src="WhatsApp Video 2026-03-10 at 09.39.12.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightboxModal" class="hidden fixed inset-0 bg-black bg-opacity-95 z-50 flex items-center justify-center p-4">
+        <button onclick="document.getElementById('lightboxModal').classList.add('hidden')" class="absolute top-4 right-4 text-white hover:text-yellow-400 z-10">
+            <i class="fas fa-times text-3xl"></i>
+        </button>
+        <img id="lightboxImage" src="" class="max-w-full max-h-[90vh] object-contain rounded-lg">
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-8 text-center">
+            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-check text-4xl text-green-600"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-2 serif">Booking Request Sent!</h3>
+            <p class="text-gray-600 mb-6">Yaa Asantewaa will contact you within 24 hours.</p>
+            <button onclick="document.getElementById('successModal').classList.add('hidden')" class="bg-yellow-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-yellow-700 transition">
+                Akwaaba!
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Navbar scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-gray-900', 'shadow-lg');
+            } else {
+                navbar.classList.remove('bg-gray-900', 'shadow-lg');
+            }
+        });
+
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('hidden');
+        }
+
+        function scrollToBook() {
+            document.getElementById('book').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function selectTour(name, price) {
+            const select = document.getElementById('tourSelect');
+            for (let i = 0; i < select.options.length; i++) {
+                if (select.options[i].value === name) {
+                    select.selectedIndex = i;
+                    break;
+                }
+            }
+            updatePrice();
+            scrollToBook();
+        }
+
+        function updatePrice() {
+            const select = document.getElementById('tourSelect');
+            const price = select.options[select.selectedIndex].dataset.price || 0;
+            const count = document.getElementById('travelerCount').value || 1;
+            const total = price * count;
+            document.getElementById('totalPrice').textContent = total > 0 ? '$' + total : 'Quote';
+        }
+
+        function processBooking(e) {
+            e.preventDefault();
+            const btn = document.getElementById('submitBtn');
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Sending...';
+
+            fetch('/book', {
+                method: 'POST',
+                body: new FormData(document.getElementById('bookingForm'))
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('successModal').classList.remove('hidden');
+                btn.innerHTML = '<span>Request Booking</span><i class="fas fa-paper-plane"></i>';
+                document.getElementById('bookingForm').reset();
+                updatePrice();
+            })
+            .catch(error => {
+                alert('Error sending booking. Please try again.');
+                btn.innerHTML = '<span>Request Booking</span><i class="fas fa-paper-plane"></i>';
+            });
+        }
+
+        function openLightbox(src) {
+            document.getElementById('lightboxImage').src = src;
+            document.getElementById('lightboxModal').classList.remove('hidden');
+        }
+
+        // GSAP Animations
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.from('.gallery-item', {
+            scrollTrigger: { trigger: '#gallery', start: 'top 80%' },
+            y: 50, opacity: 0, duration: 0.6, stagger: 0.1
+        });
+    </script>
+</body>
+</html>
